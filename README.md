@@ -267,7 +267,7 @@ Por último, realizamos una gráfica ilustrativa que resume todo este punto C, p
 
 3) Correr el programa, esperar a que se compile por completo y si todo está en orden, se verán los resultados en el terminal de comandos de la manera que se muestra en la siguiente figura y sus respectivas gráficas.
 
-![alt](transformadas.png)
+![alt](comandos.png)
 
 ## Requerimientos
 
