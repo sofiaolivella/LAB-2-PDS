@@ -191,8 +191,18 @@ Una vez obtenida la señal en términos de frecuencia gracias a la transformada 
           Media de la señal con respecto a la frecuencia es: 1.9942
           Desviación estándar con respecto a la frecuencia: 1.1617
           La mediana en cuanto a la frecuencia : 1.8821
-          
+
+Asimismo, se realiza el histograma de los valores de la señal con respecto a la frecuencia por medio del siguiente código, el cual nos da como resultado la gráfica presentada inmediatamente después.  
+
+          plt.figure(figsize=(8, 4))
+          plt.hist(magnitud, bins=50, color='orange', alpha=0.7, edgecolor='black', density=True)
+          plt.xlabel("Magnitud")
+          plt.ylabel("Frecuencia (Hz)")
+          plt.title("Histograma de la Frecuencia")
+          plt.grid()
+          plt.show()
 ![alt](HistogramaEnFrecuencia.png)
+
 ![alt](transformadas.png)
 
 ## Instrucciones
