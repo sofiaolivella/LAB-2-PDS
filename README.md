@@ -6,8 +6,8 @@ Con el objetivo de lograr reconocer la convolución como una operación que logr
 
 ## Desarrollo
 
-## Punto A 
-### I.
+### Punto A 
+#### I.
 La convolución es una operación matemática que se puede utilizar en algunas aplicaciones como el filtrado y matemáticamente se define como.  
 
 y[n] = x[n]*h[n]  
@@ -19,14 +19,14 @@ Para este ítem, se hará la convolución entre la señal de entrada y la funci�
 Para hallar la convolución entre las dos tablas a mano se hizo un procedimiento visto en clase llamado "tabla de algoritmos de convolución" que ayuda a que este proceso matemático se calcule con mayor facilidad. Para realizar esto, en la primera fila se ubica la señal de entrada numéricamente, y en la columna 1 la señal de respuesta del sistema, para a continuación multiplicarla y sumarla de manera diagonal como si fuera el cálculo de determinantes.
 ![alt](tablaY1.jpg)
 ![alt](TablaY2.jpg)
-### II.
+#### II.
 
 En este punto para graficar la señal de salida, se ubica la señal de salida en el eje y en función del número de muestras que fueron tomadas y se posiciona en el eje x, como se muestra a continuación.
 
 ![alt](ManoY1.jpg)
 ![alt](ManoY2.jpg)
 
-### III.
+#### III.
 En este ítem se hizo el cálculo y la gráfica por medio de python, del cálculo realizado anteriormente a mano, obteniendo el siguiente código:
 
      # Gráfico convolución por python
@@ -39,16 +39,33 @@ En este ítem se hizo el cálculo y la gráfica por medio de python, del cálcul
      plt.title('Gráfica de la convolución y1(n) por Python')
      plt.grid()
      plt.show()
+Se utilizó la función "np.convolve(x1, h1, mode='full');" para poder integrar y realizar el cálculo de la convolución entre la señal de entrada y la respuesta del impulso, siendo nombrada la salida como "y11"; finalmente se imprime la gráfica con las funciones "plt.figure" y "plt.stem", replicándose de igual manera para la segunda señal:
 
+     # Gráfico convolución con python
+     y22 = np.convolve(x2, h2, mode='full');
 
+     t8 = np.arange(len(y22)) 
+     plt.figure(figsize=(8, 4))
+     plt.stem(t8, y22)
+     plt.xlabel('n')
+     plt.ylabel('y2(n)')
+     plt.title('Gráfica de la convolución y2(n) por Python')
+     plt.grid()
+     plt.show()
+Por medio del código se puede evidenciar el cálculo de la señal de salida y la gráfica de convolución.
+A continuación se observa la gráfica de la señal h(n) de Juan Diego.
 ![alt](h1.png)
+A continuación se observa la gráfica de la señal x(n) de Juan Diego.
 ![alt](x1.png)
+A continuación se observa la gráfica de la convolución correspondiente.
 ![alt](y1.png)
+A continuación se observa la gráfica de la convolución por medio de python.
 ![alt](y1Python.png)
+
 ![alt](h2.png)
 ![alt](x2.png)
 ![alt](y2Python.png)
-
+### Punto B
 Para el estudio de la correlación cruzada que se puede obtener entre dos variables, se usan dos señales m1(n*Ts) = cos(2*pi*100*n*Ts) y un m2(n*Ts) = sen(2*pi*100*n*Ts) definidas ambas entre 0 y 9 (incluyendo el 0 pero no el 9) con un valor Ts = 1.25 ms. Para ello primeramente se definen ambas funciones en el código y hacemos uso de la función incluida en “numpy” que es “correlate”, esta usa de parámetros las dos señales y nos entrega una señal discreta la cuál podemos graficar. A continuación, se presenta el código de dicho cálculo con su respectiva gráfica de correlación cruzada en función del desplazamiento. 
 
     # CORRELACIONES
