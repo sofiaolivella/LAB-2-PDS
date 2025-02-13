@@ -174,7 +174,41 @@ Adicionalmente se gráfica el Histograma y función de probabilidad de dicha se�
 Como se puede evidenciar en la señal, esta se encuentra primeramente en el dominio del tiempo eso quiere decir que es una señal continua, que adicionalmente podemos concluir que no es periódica puesto que no es posible encontrar un patrón fijo que se repita cada cierto tiempo; simplemente su comportamiento no es el mismo en el tiempo y varia con respecto al intervalo en el que lo mires. Con ello en claro, si queremos realizarse un análisis en frecuencia, se le debe aplicar transformada de Fourier (cosa que se realizara en el siguiente inciso). 
 
 #### III
+Con el objetivo de poder analizar la señal obtenida en función de la frecuencia se aplica la transformada de Fourier, donde la frecuencia se dará en la función n/2, donde n representa el número de muestras captadas en la señal;  por lo que se necesita graficar la señal EMG con la transformada de Fourier para analizar el potencial de la señal del músculo en función de la frecuencia, esto con el fin de poder determinar las frecuencias dominantes dentro de la señal, brindando así información importante para el análisis. Para esto se implementó el siguiente código: 
+
+     # Transformada de Fourier
+     
+     t = np.linspace(0, 1, fs, endpoint=False) 
+     N = len(t)
+     
+     frequencies = np.fft.fftfreq(N, 1/fs)
+     spectrum = np.fft.fft(signal) / N
+     magnitud = 2 * np.abs(spectrum[:N//2]) 
+     
+     
+     plt.figure(figsize=(12,4))
+     plt.plot(frequencies[:N//2], magnitud, 'orange')
+     plt.xlabel('Frecuencia (Hz)')
+     plt.ylabel('Magnitud')
+     plt.title('Espectro de la señal normalizado')
+     plt.grid()
+     plt.show()
+     psd = (magnitud ** 2) / N
+     plt.figure(figsize=(12,4))
+     plt.plot(frequencies[:N//2], psd, 'violet')
+     plt.xlabel('Frecuencia (Hz)')
+     plt.ylabel('Densidad Espectral')
+     plt.title('Espectro de la señal de Densidad Espectral')
+     plt.grid()
+     plt.show()
+     
+Donde se usaron específicamente las funciones: “np.fft.fft(signal)” para calcular la transformada, “N=len(t)” guarda el número de las muestras, para posteriormente capturar las frecuencias, y, tomar solo los datos positivos para el cálculo de la magnitud. Se toman los datos positivos ya que la transformada de Fourier se caracteriza por la propiedad de simetría “X(-f) =X*(f)”, en la que se reflejan los datos negativos y por ende no aportan información significativa, todo esto con la función “2 * np.abs(spectrum[:N//2])” 
+Para graficar, se usan las funciones acompañadas del “plt”, donde específicamente se representa la frecuencia en el eje x y la magnitud en el eje y. 
 ![alt](EspectroNormalizado.png)
+
+La densidad espectral se aplica con el objetivo de analizar la distribución de la energía de la señal en diferentes frecuencias, con el fin de analizar actividad muscular y detectar la presencia de ruido. Para ello se utiliza la función “psd= (magnitud ** 2) /N” ya que la densidad se obtiene con magnitud ^2/N 
+
+Se grafica la frecuencia en función de X y la densidad espectral en el eje y, como se muestra a continuación: 
 ![alt](DensidadEspectral1.png)
 
 #### IV
