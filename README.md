@@ -178,6 +178,20 @@ Como se puede evidenciar en la señal, esta se encuentra primeramente en el domi
 ![alt](DensidadEspectral1.png)
 
 #### IV
+Una vez obtenida la señal en términos de frecuencia gracias a la transformada de Fourier, podemos realizar también una descripción estadística ahora hablando de la frecuencia. Para ello se usarán las mismas funciones incluidas en las librerías de “numpy” para sus respectivos cálculos como se muestra a continuación junto con sus respectivos resultados. 
+
+          ana_librerias = np.median(magnitud)
+          media_librerias = np.mean(magnitud)
+          desviacion_librerias = np.std(magnitud)
+          print(f"Media de la señal con respecto a la frecuencia es: {media_librerias:.4f}")
+          print(f"Desviación estándar con respecto a la frecuencia: {desviacion_librerias:.4f}")
+          print(f"La mediana en cuanto a la frecuencia : {mediana_librerias:.4f}")
+
+          # Resultados
+          Media de la señal con respecto a la frecuencia es: 1.9942
+          Desviación estándar con respecto a la frecuencia: 1.1617
+          La mediana en cuanto a la frecuencia : 1.8821
+          
 ![alt](HistogramaEnFrecuencia.png)
 ![alt](transformadas.png)
 
