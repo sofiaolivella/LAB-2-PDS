@@ -62,9 +62,16 @@ A continuación se observa la gráfica de la convolución correspondiente.
 A continuación se observa la gráfica de la convolución por medio de python.
 ![alt](y1Python.png)
 
+Estos mismos pasos son replicados para las gráficas de las segundas señales, es decir las de Sofia Olivella:
+A continuación se observa la gráfica de la señal h(n) de Sofia.
 ![alt](h2.png)
+A continuación se observa la gráfica de la señal x(n) de Sofia.
 ![alt](x2.png)
+A continuación se observa la gráfica de la convolución correspondiente.
+![alt](y2.png)
+A continuación se observa la gráfica de la convolución por medio de python.
 ![alt](y2Python.png)
+
 ### Punto B
 Para el estudio de la correlación cruzada que se puede obtener entre dos variables, se usan dos señales m1(n*Ts) = cos(2*pi*100*n*Ts) y un m2(n*Ts) = sen(2*pi*100*n*Ts) definidas ambas entre 0 y 9 (incluyendo el 0 pero no el 9) con un valor Ts = 1.25 ms. Para ello primeramente se definen ambas funciones en el código y hacemos uso de la función incluida en “numpy” que es “correlate”, esta usa de parámetros las dos señales y nos entrega una señal discreta la cuál podemos graficar. A continuación, se presenta el código de dicho cálculo con su respectiva gráfica de correlación cruzada en función del desplazamiento. 
 
