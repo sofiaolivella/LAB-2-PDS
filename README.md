@@ -4,6 +4,12 @@
 
 ## Desarrollo
 
+
+![alt](tablaY1.jpg)
+![alt](TablaY2.jpg)
+![alt](ManoY1.jpg)
+![alt](ManoY2.jpg)
+
 ![alt](h1.png)
 ![alt](x1.png)
 ![alt](y1.png)
