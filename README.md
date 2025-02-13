@@ -17,6 +17,8 @@
 ![alt](h2.png)
 ![alt](x2.png)
 ![alt](y2Python.png)
+
+
 ![alt](correlacion.png)
 ![alt](EEG.png)
 ![alt](HistogramaSeñalT.png)
