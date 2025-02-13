@@ -62,6 +62,8 @@ Teniendo en cuenta que la correlaci√≥n nos mide el que tan similares son las se√
 
 ## Referencias
 
+[1] Abo Alzahab, N., Di Iorio, A., Apollonio, L., Alshalak, M., Gravina, A., Antognoli, L., Baldi, M., Scalise, L., & Alchalabi, B. (2021). Auditory evoked potential EEG-Biometric dataset (version 1.0.0). PhysioNet. https://doi.org/10.13026/ps31-fc50.
+
 ## AUTORES
 - Juan Diego Clavijo Fuentes
   est.juan.dclavijjo@unimilitar.edu.co
