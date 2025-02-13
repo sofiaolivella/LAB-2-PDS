@@ -203,6 +203,27 @@ Asimismo, se realiza el histograma de los valores de la señal con respecto a la
           plt.show()
 ![alt](HistogramaEnFrecuencia.png)
 
+Por último, realizamos una gráfica ilustrativa que resume todo este punto C, podemos ver primeramente la gráfica de la señal normal adquirida en “Physionet”, después su resultante al aplicarle la transformada de Fourier, es decir la señal en términos de la frecuencia, y de ultimas la gráfica de la densidad espectral. El código implementado para hacer esta gráfica es el siguiente: 
+
+          plt.figure(figsize=(12, 8))
+          plt.subplot(4, 1, 1)
+          plt.plot(signal, label="Señal electroencefalográfica", color="red")
+          plt.title("Señal electroencefalográfica")
+          plt.legend()
+          
+          plt.subplot(4, 1, 2)
+          plt.plot(magnitud[:muestreo//2], label="Transformada de Fourier al EEG", color="blue")
+          plt.title("Transformada de Fourier al EEG")
+          plt.legend()
+          
+          plt.subplot(4, 1, 3)
+          plt.plot(psd[:muestreo//2], label="Densidad espectral", color="black")
+          plt.title("Densidad espectral")
+          plt.legend()
+          
+          plt.tight_layout()
+          plt.show()
+
 ![alt](transformadas.png)
 
 ## Instrucciones
