@@ -171,6 +171,8 @@ Adicionalmente se gráfica el Histograma y función de probabilidad de dicha se�
 
 #### II
 
+Como se puede evidenciar en la señal, esta se encuentra primeramente en el dominio del tiempo eso quiere decir que es una señal continua, que adicionalmente podemos concluir que no es periódica puesto que no es posible encontrar un patrón fijo que se repita cada cierto tiempo; simplemente su comportamiento no es el mismo en el tiempo y varia con respecto al intervalo en el que lo mires. Con ello en claro, si queremos realizarse un análisis en frecuencia, se le debe aplicar transformada de Fourier (cosa que se realizara en el siguiente inciso). 
+
 #### III
 ![alt](EspectroNormalizado.png)
 ![alt](DensidadEspectral1.png)
