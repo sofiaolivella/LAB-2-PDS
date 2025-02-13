@@ -93,7 +93,26 @@ A dicha señal EEG representada en color violeta, se le realiza una caracterizac
         Desviación estándar con librerias: 3.4127
         Coeficiente de variación con librerias: 14.3998
 
+Adicionalmente se gráfica el Histograma y función de probabilidad de dicha señal nuevamente aprovechando funciones de librerías de Python ya existentes para facilitar de sobremanera estos cálculos. La gráfica resultante es la siguiente. 
+
+        # Histograma solo
+        
+        plt.figure(figsize=(8, 4))
+        plt.hist(signal, bins=50, color='orange', alpha=0.7, edgecolor='black', density=True)
+        plt.xlabel("Amplitud de la señal")
+        plt.ylabel("Frecuencia normalizada")
+        plt.title("Histograma de la señal")
+        plt.grid()
+        
+        # Función de probabilidad
+        kde = gaussian_kde(signal)
+        x_vals = np.linspace(min(signal), max(signal), 1000)
+        pdf_vals = kde(x_vals)
+        plt.plot(x_vals, pdf_vals, color='brown', label="")
+        plt.show()
+
 ![alt](HistogramaSeñalT.png)
+
 ![alt](EspectroNormalizado.png)
 ![alt](DensidadEspectral1.png)
 ![alt](HistogramaEnFrecuencia.png)
