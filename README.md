@@ -45,6 +45,32 @@ Para el estudio de la correlación cruzada que se puede obtener entre dos variab
 
 Teniendo en cuenta que la correlación nos mide el que tan similares son las señales en los desplazamientos, deberíamos evidenciar que la señal seno y coseno están desfasadas 90° eso quiere decir que cuando tomamos un valor de desplazamiento 0 su correlación es de 0 al estar desfasadas; a medida que aumentemos dicho valor la correlación empezará a aumentar hasta llegar a esa “igualdad” que es cuando ya nos desfasamos los 90° y podríamos afirmar que están en fase, de igual manera pasará si disminuimos el valor del desplazamiento solo que será negativo. Como se ve en la gráfica, esta relación se cumple y tiene una forma senoidal.
 
+La tercera parte del laboratorio consiste en calcular valores estadísticos descriptivos de una señal de electroencefalografía en función del tiempo y de frecuencia, esto por medio de la transformada de Fourier.  
+
+Antes de cualquier tipo de cálculo, debemos de adquirir y graficar la señal electroencefalográfica desde la base de datos de “Physionet”, para ello se descargaron desde la plataforma dos archivos con datos de EEG de un estudio, referenciado en el presente documento [1], con nombres de “s01_ex01_s02.hea” y “s01_ex01_s02.dat” (archivos también incluidos en el presente directorio.  Por medio del siguiente código y aprovechando la librería wfdb, específicamente la función “rdrecord” que nos permite acceder a los datos de los archivos previamente mencionados, podemos realizar la gráfica de la señal electroencefalográfica evidenciada a continuación. 
+
+        EEG = "s01_ex01_s02"
+        
+        # Leer la señal desde el archivo
+        lecturasignal = wfdb.rdrecord(EEG)
+        signal = lecturasignal.p_signal[:,0]  
+        fs = lecturasignal.fs  
+        numero_datos = len(signal) 
+        muestreo=int(5*fs)
+        
+        # Grafica la señal
+        time = [i / fs for i in range(numero_datos)]  
+        signal = signal[:muestreo]
+        time = time[:muestreo]
+        plt.figure(figsize=(12,4))
+        plt.plot(time, signal, color="violet")
+        
+        plt.xlabel("Tiempo (s)")
+        plt.ylabel("Amplitud (mv)")
+        plt.title("Señal Biomédica EEG bases de datos physionet")
+        plt.grid()
+        plt.show()
+
 ![alt](EEG.png)
 ![alt](HistogramaSeñalT.png)
 ![alt](EspectroNormalizado.png)
