@@ -128,7 +128,7 @@ Antes de cualquier tipo de cálculo, debemos de adquirir y graficar la señal el
         plt.show()
         
 ![alt](EEG.png)
-####I
+#### I
 A dicha señal EEG representada en color violeta, se le realiza una caracterización de sus datos estadísticos descriptivos como la media, la desviación estándar, el coeficiente de variación y hasta la cantidad “n” de datos. Todos estos cálculos son realizados por medio de sus respectivas funciones incluidas en “numpy”, como se muestra en el código a continuación junto con sus respectivos resultados. 
 
         # calculos con funciones de python
@@ -169,8 +169,13 @@ Adicionalmente se gráfica el Histograma y función de probabilidad de dicha se�
 
 ![alt](HistogramaSeñalT.png)
 
+#### II
+
+#### III
 ![alt](EspectroNormalizado.png)
 ![alt](DensidadEspectral1.png)
+
+#### IV
 ![alt](HistogramaEnFrecuencia.png)
 ![alt](transformadas.png)
 
