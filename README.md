@@ -2,13 +2,44 @@
 
 ## Descripción
 
+Con el objetivo de lograr reconocer la convolución como una operación que logre integrar la señal y el sistema, y a su vez, utilizar la transformada como una herramienta para analizar el dominio de la frecuencia, se presenta el siguiente informe de laboratorio “Convolución, correlación y transformación”. 
+
 ## Desarrollo
 
+## Punto A 
+### I.
+La convolución es una operación matemática que se puede utilizar en algunas aplicaciones como el filtrado y matemáticamente se define como.  
 
+y[n] = x[n]*h[n]  
+
+Toma dos señales, una de entrada llamada x(n), y una de respuesta del sistema, convirtiéndolas en una señal nueva que será la de salida llamada y(n); un ejemplo de esto puede ser un sistema de filtración, tomando en este caso una señal EMG que por la ausencia de filtros electrónicos tendrá mucho ruido, por lo que se necesita tomar la señal de entrada, que corresponde a la señal electromiográfica con ruido, y tomar el filtro digital como la función de respuesta del sistema y(n), por consiguiente, la convolución entre estas dos va a ser la señal EMG de salida, es decir estará limpia.  
+
+Para este ítem, se hará la convolución entre la señal de entrada y la función de respuesta del sistema, que en este caso la señal tomada serán los códigos de los integrantes del grupo, siendo la señal de entrada x(n) la señal que producen los dígitos del número de identificación de cada uno, como se muestra a continuación.  
+
+Para hallar la convolución entre las dos tablas a mano se hizo un procedimiento visto en clase llamado "tabla de algoritmos de convolución" que ayuda a que este proceso matemático se calcule con mayor facilidad. Para realizar esto, en la primera fila se ubica la señal de entrada numéricamente, y en la columna 1 la señal de respuesta del sistema, para a continuación multiplicarla y sumarla de manera diagonal como si fuera el cálculo de determinantes.
 ![alt](tablaY1.jpg)
 ![alt](TablaY2.jpg)
+### II.
+
+En este punto para graficar la señal de salida, se ubica la señal de salida en el eje y en función del número de muestras que fueron tomadas y se posiciona en el eje x, como se muestra a continuación.
+
 ![alt](ManoY1.jpg)
 ![alt](ManoY2.jpg)
+
+### III.
+En este ítem se hizo el cálculo y la gráfica por medio de python, del cálculo realizado anteriormente a mano, obteniendo el siguiente código:
+
+     # Gráfico convolución por python
+     y11 = np.convolve(x1, h1, mode='full');
+     t7 = np.arange(len(y11)) 
+     plt.figure(figsize=(8, 4))
+     plt.stem(t7, y11)
+     plt.xlabel('n')
+     plt.ylabel('y1(n)')
+     plt.title('Gráfica de la convolución y1(n) por Python')
+     plt.grid()
+     plt.show()
+
 
 ![alt](h1.png)
 ![alt](x1.png)
