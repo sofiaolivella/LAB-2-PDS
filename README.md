@@ -278,8 +278,11 @@ Por último, realizamos una gráfica ilustrativa que resume todo este punto C, p
 ## Referencias
 
 [1] Abo Alzahab, N., Di Iorio, A., Apollonio, L., Alshalak, M., Gravina, A., Antognoli, L., Baldi, M., Scalise, L., & Alchalabi, B. (2021). Auditory evoked potential EEG-Biometric dataset (version 1.0.0). PhysioNet. https://doi.org/10.13026/ps31-fc50.
+
 [2] Smith,  (2007). Señales y sistemas. W3K Publishing.
+
 [3] Proakis, Manolakis(2007). Procesamiento digital de señales: principios, algoritmos y aplicaciones. 
+
 [4] Clancy, E. A., & Hogan, N. (2003). Electromiografía: una herramienta para la evaluación de la función muscular. Universidad de California.
 
 ## AUTORES
