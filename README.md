@@ -70,8 +70,29 @@ Antes de cualquier tipo de cálculo, debemos de adquirir y graficar la señal el
         plt.title("Señal Biomédica EEG bases de datos physionet")
         plt.grid()
         plt.show()
-
+        
 ![alt](EEG.png)
+
+A dicha señal EEG representada en color violeta, se le realiza una caracterización de sus datos estadísticos descriptivos como la media, la desviación estándar, el coeficiente de variación y hasta la cantidad “n” de datos. Todos estos cálculos son realizados por medio de sus respectivas funciones incluidas en “numpy”, como se muestra en el código a continuación junto con sus respectivos resultados. 
+
+        # calculos con funciones de python
+        media_librerias = np.mean(signal)
+        longitud_vector_librerias = len(signal)
+        desviacion_librerias = np.std(signal)
+        coeficiente_variacion_librerias = (desviacion_librerias / media_librerias) if media_librerias != 0 else np.nan
+        
+        print("Esta señal no es periódica")
+        print(f"Media de la señal con librerias: {media_librerias:.4f}")
+        print(f"Longitud del vector con librerias: {longitud_vector_librerias}")
+        print(f"Desviación estándar con librerias: {desviacion_librerias:.4f}")
+        print(f"Coeficiente de variación con librerias: {coeficiente_variacion_librerias:.4f}")
+        # Resultados
+        Esta señal no es periódica
+        Media de la señal con librerias: 0.2370
+        Longitud del vector con librerias: 1000
+        Desviación estándar con librerias: 3.4127
+        Coeficiente de variación con librerias: 14.3998
+
 ![alt](HistogramaSeñalT.png)
 ![alt](EspectroNormalizado.png)
 ![alt](DensidadEspectral1.png)
